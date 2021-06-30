@@ -9,7 +9,7 @@ def attention(query, key, value, mask=None, dropout=None):
     scores = q_k / math.sqrt(query.size(-1))
     # if mask is not None:
     #     mask = mask.unsqueeze(1)
-    #     scores = scores.masked_fill(mask == 0, -1e9)
+    #     scores = scores.masked_fill(mask == 0, -1e9) 체크!!!!!
 
     output = F.softmax(scores, dim=-1)
     if dropout is not None:
